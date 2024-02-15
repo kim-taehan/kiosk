@@ -7,6 +7,8 @@ server:
 
 
 spring:
+  messages:
+    basename: messages, errors
   datasource:
     url: jdbc:h2:mem:~/kiosk
     username: sa
@@ -32,3 +34,8 @@ spring:
         query.plan_parameter_metadata_max_size: 16
         format_sql: true
         default_batch_fetch_size : 100 # Detail 적용 @BatchSize(size=100)
+
+logging:
+  config: classpath:logback.xml
+  level:
+    p6spy: info
